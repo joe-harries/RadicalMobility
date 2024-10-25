@@ -1,4 +1,4 @@
-import openbabel
+from openbabel import openbabel
 
 def stack_dimer(input_mol_file, stack_distance):
 
@@ -16,12 +16,12 @@ def stack_dimer(input_mol_file, stack_distance):
     mol += mol_copy
     mol.PerceiveBondOrders()  
 
-    output_mol_file = "stacked_dimer.mol"
+    output_mol_file = "stacked_dimer_Blatter1.mol"
     obConversion.WriteFile(mol, output_mol_file)
     
     return output_mol_file
 
 if __name__ == "__main__":
-    input_mol_file = "optBlatter2.mol"
-    stacked_dimer_file = stack_dimer(input_mol_file, 5)
+    input_mol_file = "opt_radical_Blatter1.mol"
+    stacked_dimer_file = stack_dimer(input_mol_file, 3)
     print(f"Stacked dimer file created: {stacked_dimer_file}")
